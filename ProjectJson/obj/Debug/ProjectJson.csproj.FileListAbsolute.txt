@@ -1,0 +1,14 @@
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\bin\Debug\ProjectJson.exe.config
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\bin\Debug\ProjectJson.exe
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\bin\Debug\ProjectJson.pdb
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.csproj.AssemblyReference.cache
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.Form1.resources
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.Properties.Resources.resources
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.Resource1.resources
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.csproj.GenerateResource.cache
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.csproj.CoreCompileInputs.cache
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.csproj.CopyComplete
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.exe
+C:\Users\Admin PT&I\Documents\GitHub\ProjectJson\ProjectJson\obj\Debug\ProjectJson.pdb
