@@ -61,13 +61,15 @@ namespace ProjectJson
 
         private void ConsProceso(string NCaja)
         {
+            TakeToken();
+
             try
             {
                 var url = "http://appscl.dole.com/wsqc/QC/GetScannedInfoPackedFruit?info=" + NCaja;
 
                 var HttpRequest = (HttpWebRequest)WebRequest.Create(url);
                 HttpRequest.Method = "POST";
-                HttpRequest.Headers["Authorization"] = "Bearer " + TokenClass.TokenC.ToString();
+                HttpRequest.Headers["Authorization"] = "Bearer " + Token;
                 HttpRequest.ContentLength = 0;
                 HttpRequest.Accept = "*/*";
                 HttpRequest.KeepAlive = true;
@@ -110,6 +112,8 @@ namespace ProjectJson
 
         private void Inspeccion()
         {
+            TakeToken();
+
             try
             {
                 var url = "http://appscl.dole.com/wsqc/QC/GetScannedInfoPackedFruit";
@@ -129,24 +133,75 @@ namespace ProjectJson
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            TakeToken();
+            //Datos Base
+            SendJson sendJson = new SendJson();
+            sendJson.id = "1";
+            sendJson.parentId = "2";
+            sendJson.companyId = 3;
+            sendJson.name = "4";
+            sendJson.creationTime = 5;
+            sendJson.creationTimeISO = DateTime.Now;
+            sendJson.externalProduceId = "6";
+            sendJson.varietyId = 7;
+            sendJson.externalVarietyId = "8";
+            sendJson.varietyName = "9";
+            sendJson.processId = 10;
+            sendJson.processName = "11";
+            sendJson.standardId = 12;
+            sendJson.standardName = "13";
+            sendJson.grade = "14";
+            sendJson.username = "15";
 
-            AtrJson atrJson = new AtrJson();
-            atrJson.id = 2;
-            atrJson.externalId = "String3";
-            atrJson.name = "String4";
-            atrJson.value = 5;
-            atrJson.valueName = "String6";
-            atrJson.count = 7;
-            atrJson.grade = "String8";
+            //For Properties
+            for (int i = 1; i < 3; i++)
+            {
+                PropJson propJson = new PropJson();
+                propJson.id = "p" + i;
+                propJson.externalId = "p" + i + 1;
+                propJson.name = "p" + i + 2;
+                propJson.type = "p" + i + 3;
+                propJson.jsonpropdefault = "p" + i + 4;
+                propJson.value = "p" + i + 5;
+                sendJson.properties.Add(propJson);
+            }
 
-            ValuesAtr valuesAtr = new ValuesAtr();
-            valuesAtr.valueName = "M1";
-            valuesAtr.value = 25;
+            //For Attributes
+            for (int i = 1; i < 3; i++)
+            {
+                AtrJson atrJson = new AtrJson();
+                atrJson.id = 2;
+                atrJson.externalId = "a" + i;
+                atrJson.name = "a" + i + 1;
+                atrJson.value = 5;
+                atrJson.valueName = "a" + i + 2;
+                atrJson.count = 7;
+                atrJson.grade = "a" + i + 3;
+                for (int x = 1; x < 4; x++)
+                {
+                    ValuesAtr valuesAtr = new ValuesAtr();
+                    valuesAtr.valueName = "M" + i;
+                    valuesAtr.value = 5 * i;
+                    valuesAtr.count = 25 * i;
+                    atrJson.values.Add(valuesAtr);
+                }
+                sendJson.attributes.Add(atrJson);
+            }
 
-            atrJson.values.Add(valuesAtr);
+            //For Defects
+            for (int i = 1; i < 3; i++)
+            {
+                DefJson defJson = new DefJson();
+                defJson.id = 2;
+                defJson.externalId = "d" + i;
+                defJson.name = "d" + i + 1;
+                defJson.count = 5;
+                defJson.percent = 6;
+                defJson.grade = "d" + i + 2;
+                sendJson.defects.Add(defJson);
+            }
 
-            textBox1.Text = JsonConvert.SerializeObject(atrJson);
+            string JsonData = JsonConvert.SerializeObject(sendJson).Replace("jsonpropdefault", "default");
+            textBox1.Text = JsonData;
         }
 
         private void textBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

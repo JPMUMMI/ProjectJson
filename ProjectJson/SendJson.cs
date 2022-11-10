@@ -42,7 +42,7 @@ namespace ProjectJson
         public string externalId { get; set; }
         public string name { get; set; }
         public string type { get; set; }
-        public string jdefault { get; set; }
+        public string jsonpropdefault { get; set; }
         public string value { get; set; }
     }
 
