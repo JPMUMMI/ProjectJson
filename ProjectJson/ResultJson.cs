@@ -32,4 +32,12 @@ namespace ProjectJson
 
         public static List<ProcJson> ProcCaja = new List<ProcJson>();
     }
+
+    internal class IdInspecJson
+    {
+        public string id { get; set; }
+        public int registrationId { get; set; }
+
+        public static List<IdInspecJson> ProcCaja = new List<IdInspecJson>();
+    }
 }
